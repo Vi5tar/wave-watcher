@@ -18,9 +18,9 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->morphs('transactionable');
             $table->string('type');
-            $table->unsignedDecimal('qty');
-            $table->unsignedDecimal('balance')->nullable();
-            $table->unsignedDecimal('exchange_rate');
+            $table->unsignedDecimal('qty', 65, 30);
+            $table->unsignedDecimal('balance', 65, 30)->nullable();
+            $table->unsignedDecimal('exchange_rate', 65, 2);
             $table->timestamps();
         });
     }

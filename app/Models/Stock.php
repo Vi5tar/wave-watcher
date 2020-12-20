@@ -16,4 +16,9 @@ class Stock extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function getCurrentRate()
+    {
+        return rand(0, 4000);
+    }
 }

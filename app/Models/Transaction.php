@@ -23,4 +23,9 @@ class Transaction extends Model
         'balance',
         'exchange_rate',
     ];
+
+    public function transactionable()
+    {
+        return $this->morphTo();
+    }
 }

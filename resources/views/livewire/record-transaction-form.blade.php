@@ -7,13 +7,13 @@
                     <livewire:search-stocks />
                     <div class="col-span-6 sm:col-span-3">
                         <label for="shares" class="block text-sm font-medium text-gray-700">Shares</label>
-                        <input wire:model="shares" type="number" name="shares" id="qty" min="0"
+                        <input wire:model="shares" type="number" step=".00000001" name="shares" id="qty" min="0"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
     
                     <div class="col-span-6 sm:col-span-3">
                         <label for="exchange_rate" class="block text-sm font-medium text-gray-700">Exchange Rate</label>
-                        <input wire:model="exchangeRate" type="number" name="exchange_rate" id="exchange_rate"
+                        <input wire:model="exchangeRate" type="number" step=".01" name="exchange_rate" id="exchange_rate"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                 </div>
