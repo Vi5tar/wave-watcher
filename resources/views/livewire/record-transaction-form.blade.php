@@ -16,6 +16,11 @@
                         <input wire:model="exchangeRate" type="number" step=".01" name="exchange_rate" id="exchange_rate"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+                        <input wire:model="date" id="date" type="datetime-local"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                    </div>
                 </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 flex justify-between sm:px-6">

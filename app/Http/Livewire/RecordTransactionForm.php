@@ -12,6 +12,7 @@ class RecordTransactionForm extends Component
     public $stock;
     public $shares;
     public $exchangeRate;
+    public $date;
 
     protected $listeners = ['stockSet' => 'setStock', 'formSubmit' => 'resetForm'];
 
@@ -30,6 +31,7 @@ class RecordTransactionForm extends Component
         unset($this->stock);
         unset($this->shares);
         unset($this->exchangeRate);
+        unset($this->date);
     }
 
     public function toggleRecord()
@@ -46,6 +48,7 @@ class RecordTransactionForm extends Component
             'qty' => $this->shares,
             'balance' => $this->buy ? $this->shares : null,
             'exchange_rate' => $this->exchangeRate,
+            'created_at' => $this->date,
         ]);
 
         auth()->user()->stocks()->syncWithoutDetaching([$this->stock['id']]);

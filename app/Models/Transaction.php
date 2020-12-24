@@ -22,6 +22,7 @@ class Transaction extends Model
         'qty',
         'balance',
         'exchange_rate',
+        'created_at',
     ];
 
     public function transactionable()
