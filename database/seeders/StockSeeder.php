@@ -16,20 +16,34 @@ class StockSeeder extends Seeder
     {
         $stocks = [
             [
+                'name' => 'Airbnb',
+                'symbol' => 'ABNB',
+                'yahoo_css_selector' => 'div > span[data-reactid=42]',
+            ],
+            [
                 'name' => 'Amazon',
                 'symbol' => 'AMZN',
+                'yahoo_css_selector' => 'div > span[data-reactid=50]',
             ],
             [
                 'name' => 'Apple',
                 'symbol' => 'AAPL',
+                'yahoo_css_selector' => 'div > span[data-reactid=50]'
+            ],
+            [
+                'name' => 'C3.ai',
+                'symbol' => 'AI',
+                'yahoo_css_selector' => 'div > span[data-reactid=50]'
             ],
             [
                 'name' => 'NIO',
                 'symbol' => 'NIO',
+                'yahoo_css_selector' => 'div > span[data-reactid=50]'
             ],
             [
                 'name' => 'Tesla',
                 'symbol' => 'TSLA',
+                'yahoo_css_selector' => 'div > span[data-reactid=50]'
             ], 
         ];
 
@@ -37,6 +51,7 @@ class StockSeeder extends Seeder
             Stock::factory()->create([
                 'name' => $stock['name'],
                 'symbol' => $stock['symbol'],
+                'yahoo_css_selector' => optional($stock)['yahoo_css_selector'],
             ]);
         }
     }

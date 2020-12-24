@@ -17,6 +17,9 @@ class CreateStocksTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('symbol');
+            $table->string('yahoo_css_selector')->default('div > span[data-reactid=50]')->nullable();
+            $table->unsignedDecimal('exchange_rate', 65, 2)->nullable();
+            $table->timestamp('last_rate_update')->nullable();
             $table->timestamps();
         });
     }
