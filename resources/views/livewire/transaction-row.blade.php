@@ -24,7 +24,7 @@
       <div class="text-sm text-gray-500">Exchange Rate: {{$transaction->exchange_rate}}</div>
     </td>
     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-        {{$stock->rate}}
+        {{$stock->exchange_rate}} <small>({{$stock->last_rate_update->diffForHumans()}})</small>
     </td>
     @if ($this->shouldTrack)
         <td class="px-6 py-4 whitespace-nowrap">

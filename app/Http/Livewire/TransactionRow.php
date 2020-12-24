@@ -16,19 +16,17 @@ class TransactionRow extends Component
     {
         $this->stock = $this->transaction->transactionable;
 
-        $this->tick();
-
         return view('livewire.transaction-row');
     }
 
     public function tick()
     {
-        $this->stock->rate = $this->stock->getCurrentRate();
+        $this->stock->refresh();
     }
 
     public function getGainProperty()
     {
-        return round(($this->stock->rate * $this->transaction->qty) - ($this->transaction->qty * $this->transaction->exchange_rate), 2);
+        return round(($this->stock->exchange_rate * $this->transaction->qty) - ($this->transaction->qty * $this->transaction->exchange_rate), 2);
     }
 
     public function getShouldTrackProperty()
